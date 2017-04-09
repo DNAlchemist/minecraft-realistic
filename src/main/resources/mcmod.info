@@ -1,0 +1,16 @@
+[
+{
+  "modid": "minecraft-realistic",
+  "name": "Minecraft Realistic",
+  "description": "Realistic server mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/DNAlchemist/minecraft-realistic",
+  "updateUrl": "https://github.com/DNAlchemist/minecraft-realistic",
+  "authorList": ["DNAlchemist"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

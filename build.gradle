@@ -1,0 +1,35 @@
+group = "one.chest.minecraft"
+version = "0.1"
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+runServer.args "nogui"
+minecraft {
+    version = "1.10.2-12.18.3.2254"
+    runDir = "run"
+    mappings = "snapshot_20161111"
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", minecraft.version
+
+    from(sourceSets['main'].resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': minecraft.version
+        exclude 'mcmod.info'
+    }
+}
