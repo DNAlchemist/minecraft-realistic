@@ -20,4 +20,10 @@ public class RealisticStarter {
     void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(RealisticStarter.class);
     }
+
+    @SubscribeEvent
+    static void setHarvestSpeed(PlayerEvent.BreakSpeed breakSpeed) {
+        breakSpeed.setNewSpeed(breakSpeed.getNewSpeed()/15);
+    }
+
 }
