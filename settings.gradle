@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'minecraft'
+rootProject.name = 'minecraft-realistic'
