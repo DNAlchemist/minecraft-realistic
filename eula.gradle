@@ -1,0 +1,16 @@
+assert project.hasProperty("minecraft") : /\
+eual.gradle depends on ForgeGradle plugin. 
+Put "apply plugin: 'net.minecraftforge.gradle.forge'" before "apply from: 'eula.gradle'" instruction/
+
+task acceptEula {
+    doLast {
+        def runDir = new File(minecraft.runDir as String)
+        if(!runDir.exists()) {
+            runDir.mkdirs();
+        }
+        new File(runDir, "eula.txt").text = "eula = true"
+    }
+    outputs.file new File(minecraft.runDir as String, "eula.txt")
+}
+
+runServer.dependsOn acceptEula
