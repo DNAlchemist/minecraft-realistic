@@ -1,6 +1,3 @@
-group = "one.chest.minecraft"
-version = "0.1"
-
 buildscript {
     repositories {
         jcenter()
