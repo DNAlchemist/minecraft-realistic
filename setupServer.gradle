@@ -5,10 +5,9 @@ Put "apply plugin: 'net.minecraftforge.gradle.forge'" before "apply from: 'eula.
 task acceptEula {
     doLast {
         def runDir = new File(minecraft.runDir as String)
-        if(!runDir.exists()) {
-            runDir.mkdirs();
-        }
-        new File(runDir, "eula.txt").text = "eula = true"
+        runDir.mkdirs()
+
+        new File(runDir, "eula.txt").setText("eula = true", "UTF-8")
     }
     outputs.file new File(minecraft.runDir as String, "eula.txt")
 }
