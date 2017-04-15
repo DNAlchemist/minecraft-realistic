@@ -11,8 +11,11 @@ buildscript {
     }
 }
 
+apply plugin: 'java'
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply from: 'setupServer.gradle'
+
+sourceCompatibility = targetCompatibility = '1.8'
 
 runServer.args "nogui"
 minecraft {
