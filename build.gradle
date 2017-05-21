@@ -18,6 +18,9 @@ apply from: 'setupServer.gradle'
 sourceCompatibility = targetCompatibility = '1.8'
 
 runServer.args "nogui"
+
+System.getProperty("username")?.with({ runClient.args(["--username", it]) });
+
 minecraft {
     version = "1.10.2-12.18.3.2254"
     runDir = "run"
